@@ -1,0 +1,20 @@
+body {
+    background-color: aliceblue;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#article1 {
+    width: 50%;
+    border-style: solid;
+    border-color: red;
+}
+
+#article2 {
+    width: 50%;
+    border-style: solid;
+    border-color: blue;
+}
