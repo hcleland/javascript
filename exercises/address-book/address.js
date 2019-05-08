@@ -18,12 +18,18 @@ document.querySelector("#saveEntry").addEventListener("click", event => {
             <h1>${personName}</h1>
             <div>${personAddress}</div>
             <div>I can purchase ${favoriteThing} at ${store}</div>
-        </section>
-    `
-})
-
-
+            </section>
+            `
+    // Challenge
+    // When you click the button and the new favorite thing is added to the DOM, clear out the value of both input fields. Then set the focus to the first input field.
+    document.querySelector("#fullName").value = " ";
+    document.querySelector("#address").value = " ";
+    document.querySelector("#favoriteThing").value = " ";
+    document.querySelector("#favoriteThingStore").value = " ";
+});
 // Add a button beneath the fieldsets labeled "Save to Wishlist".
 
 // When the button is clicked, display the data in the following format in the DOM.
 // I can purchase {thing} at {location}
+
+
