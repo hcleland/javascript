@@ -2,7 +2,8 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 import React, { Component } from 'react'
 import StoreList from './StoreList/stores';
 import EmployeeList from './EmployeeList/employees';
-import CandyList from './CandyList/candies';
+import CandyList from './CandyList/CandyList';
+import candyTypes from './CandyList/candyTypes';
 
 class ApplicationViews extends Component {
 

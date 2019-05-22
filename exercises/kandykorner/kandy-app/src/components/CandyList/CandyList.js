@@ -8,7 +8,7 @@ class CandyList extends Component {
                 {
                     this.props.candies.map(candy =>
                         <div key={candy.id}>
-                            {candy.name}
+                            <p>{candy.name} - {candy.type}</p>
                         </div>
                     )
                 }
