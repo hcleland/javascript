@@ -9,7 +9,7 @@ class NavBar extends Component {
             <nav className="navbar navbar-light light-blue flex-md-nowrap p-0 shadow">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Candy Stores</Link>
+                        <Link className="nav-link" to="/stores">Candy Stores</Link>
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to="/employees">Employees</Link>
