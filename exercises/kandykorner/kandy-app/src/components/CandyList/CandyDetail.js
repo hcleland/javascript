@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import candy from "./candy.jpg"
+import candy from "./candy.png"
 
 
 export default class Candy extends Component {

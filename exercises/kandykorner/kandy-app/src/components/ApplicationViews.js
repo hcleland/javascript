@@ -2,11 +2,12 @@ import { Route, BrowserRouter as Router } from 'react-router-dom'
 import { withRouter } from 'react-router'
 import React, { Component } from 'react'
 import StoreList from './StoreList/StoreList';
+import StoreDetail from "./StoreList/StoreDetail"
 import EmployeeList from './EmployeeList/employeesList';
 import EmployeeDetail from "./EmployeeList/EmployeeDetail";
 import CandyList from './CandyList/CandyList';
-import candyTypes from './CandyList/candyTypes';
 import CandyDetail from "./CandyList/CandyDetail"
+import candyTypes from './CandyList/candyTypes';
 import APIManager from '../modules/APIManager';
 
 class ApplicationViews extends Component {
@@ -37,6 +38,21 @@ class ApplicationViews extends Component {
                 <Route exact path="/stores" render={(props) => {
                     return <StoreList stores={this.state.stores} />
                 }} />
+                <Route exact path="/stores/:storeId(\d+)" render={(props) => {
+                    // Find the store with the id of the route parameter
+                    let store = this.state.stores.find(store =>
+                        store.id === parseInt(props.match.params.storeId)
+                    )
+
+                    // If the store wasn't found, create a default one
+                    if (!store) {
+                        store = { id: 404, name: "404", store: "Store not found" }
+                    }
+
+                    return <StoreDetail store={store}
+                        deleteStore={this.deleteStore} />
+                }} />
+
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList employees={this.state.employees} />
                 }} />

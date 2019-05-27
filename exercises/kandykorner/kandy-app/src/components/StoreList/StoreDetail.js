@@ -1,27 +1,27 @@
 import React, { Component } from "react"
-import Person from "./Person.svg"
+import Shop from "./Shop.svg"
 
-export default class Employee extends Component {
+export default class Store extends Component {
     state = {
         saveDisabled: false
     }
 
     render() {
         return (
-            <section className="employee">
-                <div key={this.props.employee.id} className="card">
+            <section className="store">
+                <div key={this.props.store.id} className="card">
                     <div className="card-body">
                         <h4 className="card-title">
-                            <img src={Person} className="icon--person" />
+                            <img src={Shop} className="icon--store" />
                         </h4>
                         <h4>
-                            {this.props.employee.name}
+                            {this.props.store.name}
                         </h4>
                         <button onClick={
                             () => {
                                 this.setState(
                                     { saveDisabled: true },
-                                    () => this.props.deleteEmployee(this.props.employee.id)
+                                    () => this.props.deleteStore(this.props.store.id)
                                 )
                             }
                         }
