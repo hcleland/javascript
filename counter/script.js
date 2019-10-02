@@ -17,6 +17,9 @@ function incrementCounter() {
     else if (counter.innerHTML === "0") {
         counter.style.color = "white";
     }
+    counter.animate([{ opacity: "0.2" }, { opacity: "1.0" }]), {
+        duration: 500, fills: "forwards"
+    });
 }
 
 function decrementCounter() {
