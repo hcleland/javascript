@@ -19,6 +19,20 @@ class ApplicationViews extends Component {
         candies: []
     }
 
+    deleteCandy = (id) => {
+        const newState = {};
+        APIManager.deleteCandy(id)
+            .then(APIManager.getAll("candies"))
+            .then(candies => {
+                console.log("candies", candies);
+                newState.candies = candies
+            })
+            .then(() => {
+                this.props.history.push("/candies")
+                this.setState(newState)
+            })
+    }
+
     componentDidMount() {
         const newState = {};
         APIManager.getAll("stores")
